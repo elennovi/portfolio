@@ -1,0 +1,114 @@
+@use '../../../styles/mixins.scss' as mixins;
+
+.main-banner {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: var(--spacing-xl);
+
+  padding: var(--spacing-6xl) var(--spacing-xl) var(--spacing-5xl) 0;
+
+  background: radial-gradient(50% 90% at 10% 5%, #660c2d, #3b0530 25%, #170223, transparent);
+
+  @include mixins.platform(tablet, mobile) {
+		padding: var(--spacing-4xl) var(--spacing-xs) var(--spacing-xl) var(--spacing-xs) ;
+
+    background: radial-gradient(90% 50% at 90% 2%, #660c2d, #3b0530 25%, #170223, transparent);
+  }
+
+  &__figure {
+    @include mixins.platform(tablet, mobile) {
+      display: none;
+    }
+
+    &--mobile {
+      position: absolute;
+      right: 0;
+      top: 0;
+
+      @include mixins.desktop {
+        display: none;
+      }
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-s);
+
+		@include mixins.platform(tablet, mobile) {
+      gap: var(--spacing-xs);
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xxs);
+  }
+
+  &__name {
+    font-family: var(--font-family);
+    font-size: 32px;
+    font-weight: 200;
+    line-height: normal;
+
+    color: var(--secondary-two);
+
+		@include mixins.platform(tablet, mobile) {
+      font-size: 24px;
+    }
+  }
+
+  &__title {
+    font-family: var(--font-family);
+    font-size: 64px;
+    font-weight: 800;
+    line-height: normal;
+
+    color: var(--secondary-one);
+
+		@include mixins.platform(tablet, mobile) {
+      font-size: 40px;
+    }
+  }
+
+  &__description {
+    font-family: var(--font-family);
+    font-size: 14px;
+    font-weight: 200;
+    line-height: normal;
+
+    color: var(--secondary-two);
+  }
+
+  &__footer {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xxs);
+  }
+
+  &__additional-info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: var(--spacing-xxs);
+
+    color: var(--secondary-one);
+  }
+}
+
+.additional-info {
+  &__icon {
+    color: inherit;
+  }
+
+  &__label {
+    font-family: var(--font-family);
+    font-size: 16px;
+    font-weight: 200;
+    line-height: normal;
+    color: inherit;
+  }
+}

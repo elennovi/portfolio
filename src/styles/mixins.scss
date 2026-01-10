@@ -1,0 +1,45 @@
+/* ----------- MOBILE ----------- */
+@mixin mobile {
+  @media only screen and (max-width: 767px) {
+    @content;
+  }
+}
+
+/* ----------- TABLET ----------- */
+@mixin tablet {
+  @media only screen and (min-width: 768px) and (max-width: 1023px) {
+    @content;
+  }
+}
+
+/* ----------- DESKTOP ----------- */
+@mixin desktop {
+  @media only screen and (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin platform($keys...) {
+  @each $key in $keys {
+    @if ($key == mobile) {
+      @include mobile {
+        @content;
+      }
+    } @else if ($key == tablet) {
+      @include tablet {
+        @content;
+      }
+    } @else if ($key == desktop) {
+      @include desktop {
+        @content;
+      }
+    }
+  }
+}
+
+/* ----------- ICONS ----------- */
+@mixin icon-size($size) {
+  height: $size;
+  width: $size;
+  font-size: $size;
+}
