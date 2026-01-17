@@ -1,0 +1,39 @@
+@use '../../../../styles/mixins.scss' as mixins;
+
+.tag {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: var(--spacing-xxs);
+  padding: var(--spacing-xs);
+
+  background-color: var(--blurred-three);
+
+  border-radius: var(--border-radius-normal);
+
+  @include mixins.platform(tablet, mobile) {
+    padding: var(--spacing-xxs) var(--spacing-xs);
+  }
+
+  &__icon {
+    color: var(--secondary-one);
+  }
+
+  &__title {
+    font-family: var(--font-family);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: normal;
+
+    color: var(--secondary-two);
+
+    width: max-content;
+
+    @include mixins.platform(tablet, mobile) {
+      font-size: 14px;
+    }
+  }
+
+  @include mixins.border-bottom-top;
+}

@@ -1,0 +1,57 @@
+@use '../../../styles/mixins.scss' as mixins;
+
+.soft-skills-banner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-s);
+  padding: var(--spacing-m) 0 var(--spacing-xl) 0;
+
+  @include mixins.platform(tablet, mobile) {
+    gap: var(--spacing-xs);
+    padding: var(--spacing-s) 0 var(--spacing-l) 0;
+  }
+
+  &__title {
+    font-family: var(--font-family);
+    font-size: 32px;
+    font-weight: 600;
+    line-height: normal;
+
+    color: var(--secondary-one);
+
+    padding: 0 var(--spacing-s);
+
+    @include mixins.platform(tablet, mobile) {
+      font-size: 24px;
+      padding: 0 var(--spacing-xs);
+    }
+  }
+
+  &__carousel {
+    display: flex;
+    flex-direction: row;
+    gap: var(--spacing-xs);
+
+    padding: 0 var(--spacing-s) var(--spacing-m) var(--spacing-s);
+
+    overflow: auto;
+
+    @include mixins.platform(tablet, mobile) {
+      gap: var(--spacing-xxs);
+      padding: 0 var(--spacing-xs) var(--spacing-s) var(--spacing-xs);
+    }
+  }
+
+  app-card {
+    display: block;
+    max-width: 150px;
+    min-width: 150px;
+
+    height: 100%;
+
+    @include mixins.platform(tablet, mobile) {
+      max-width: 125px;
+      min-width: 125px;
+    }
+  }
+}
