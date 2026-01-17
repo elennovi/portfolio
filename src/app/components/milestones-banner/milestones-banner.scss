@@ -1,0 +1,179 @@
+@use '../../../styles/mixins.scss' as mixins;
+
+.milestones-banner {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-m);
+
+  padding: var(--spacing-5xl) var(--spacing-7xl);
+
+  background:
+    radial-gradient(60% 45% at 0 50%, #660c2d, #3b0530 25%, #170223, transparent),
+    radial-gradient(40% 40% at 100% 60%, #660c2d, #3b0530 25%, #170223, transparent);
+
+  @include mixins.platform(tablet, mobile) {
+    padding: var(--spacing-xxl) var(--spacing-xs) var(--spacing-xl);
+    gap: var(--spacing-xs);
+
+    background:
+      radial-gradient(65% 50% at -10% 50%, #660c2d, #3b0530 25%, #17022a, transparent),
+      radial-gradient(40% 30% at 100% 70%, #660c2d, #3b0530 25%, #170223, transparent);
+  }
+
+  &__image {
+    position: absolute;
+
+    &--left {
+      left: 0;
+      top: 280px;
+
+      @include mixins.platform(tablet, mobile) {
+        display: none;
+      }
+    }
+
+    &--right {
+      right: 0;
+      top: 280px;
+
+      @include mixins.platform(tablet, mobile) {
+        display: none;
+      }
+    }
+
+    &--mobile {
+      left: 16px;
+      top: 36px;
+
+      @include mixins.desktop {
+        display: none;
+      }
+    }
+  }
+
+  &__title {
+    font-family: var(--font-family);
+    font-size: 32px;
+    font-weight: 600;
+    line-height: normal;
+
+    color: var(--secondary-one);
+
+    @include mixins.platform(tablet, mobile) {
+      font-size: 24px;
+    }
+  }
+
+  &__experience {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-xs);
+
+    padding: var(--spacing-s) var(--spacing-l);
+    height: 200px;
+    background-color: var(--blurred-three);
+
+    border-radius: var(--border-radius-normal);
+    @include mixins.border-left-right;
+
+    font-family: var(--font-family);
+    font-size: 24px;
+    font-weight: 400;
+    line-height: normal;
+
+    color: var(--secondary-two);
+
+    @include mixins.platform(tablet, mobile) {
+      height: 128px;
+      width: 100%;
+
+      font-size: 20px;
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: row;
+    gap: var(--spacing-xs);
+
+    width: 100%;
+
+    @include mixins.platform(tablet, mobile) {
+      gap: var(--spacing-xxs);
+    }
+  }
+
+  &__milestone {
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-xs);
+
+    padding: var(--spacing-s);
+    background-color: var(--blurred-three);
+    border-radius: var(--border-radius-normal);
+
+    font-family: var(--font-family);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: normal;
+    text-align: center;
+
+    color: var(--secondary-two);
+
+    @include mixins.platform(tablet, mobile) {
+      font-size: 14px;
+      gap: var(--spacing-xxs);
+    }
+
+    &--completed,
+    &--developed {
+      @include mixins.border-left-right;
+    }
+
+    &--designed,
+    &--leaded {
+      @include mixins.border-right-left;
+    }
+  }
+}
+
+.milestone {
+  &__number {
+    font-family: var(--font-family);
+    font-size: 32px;
+    font-weight: 800;
+    line-height: normal;
+    text-align: center;
+
+    color: var(--secondary-one);
+
+    @include mixins.platform(tablet, mobile) {
+      font-size: 24px;
+    }
+  }
+}
+
+.experience {
+  &__number {
+    font-family: var(--font-family);
+    font-size: 48px;
+    font-weight: 800;
+    line-height: normal;
+
+    color: var(--secondary-one);
+
+    @include mixins.platform(tablet, mobile) {
+      font-size: 32px;
+    }
+  }
+}
