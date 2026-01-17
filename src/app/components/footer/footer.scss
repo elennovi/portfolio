@@ -1,0 +1,96 @@
+@use '../../../styles/mixins.scss' as mixins;
+
+.footer {
+  position: relative;
+
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: center;
+
+  width: 100%;
+  height: 500px;
+
+  background:
+    radial-gradient(30% 85% at 50% 100%, #660c2d, #3b0530 25%, #170223, transparent),
+    radial-gradient(25% 45% at 105% 70%, #660c2d, #3b0530 25%, #170223, transparent),
+    radial-gradient(40% 70% at -10% 70%, #660c2d, #3b0530 25%, #170223, transparent);
+
+  @include mixins.platform(tablet, mobile) {
+    background:
+      radial-gradient(200px 175px at -5% 50%, #660c2d, #3b0530 25%, #170223, transparent),
+      radial-gradient(175px 200px at 100% 45%, #660c2d, #3b0530 25%, #170223, transparent),
+      radial-gradient(250px 200px at 50% 100%, #660c2d, #3b0530 25%, #170223, transparent);
+  }
+
+  &__image {
+    position: absolute;
+
+    &--left {
+      left: 0;
+
+      @include mixins.platform(tablet, mobile) {
+        bottom: 90px;
+      }
+    }
+
+    &--right {
+      right: 0;
+
+      @include mixins.platform(tablet, mobile) {
+        bottom: 150px;
+      }
+    }
+
+    &--desktop {
+      @include mixins.platform(tablet, mobile) {
+        display: none;
+      }
+    }
+
+    &--mobile {
+      @include mixins.desktop {
+        display: none;
+      }
+    }
+  }
+
+  &__center {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+}
+
+.center {
+  &__content {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+
+    @include mixins.platform(tablet, mobile) {
+      gap: var(--spacing-xxs);
+      bottom: 28px;
+    }
+  }
+}
+
+.content {
+  &__wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: var(--spacing-xxs);
+  }
+
+  &__icon {
+    color: var(--secondary-one);
+  }
+}
