@@ -11,7 +11,7 @@
   background: radial-gradient(50% 90% at 10% 5%, #660c2d, #3b0530 25%, #170223, transparent);
 
   @include mixins.platform(tablet, mobile) {
-		padding: var(--spacing-4xl) var(--spacing-xs) var(--spacing-xl) var(--spacing-xs) ;
+    padding: var(--spacing-4xl) var(--spacing-xs) var(--spacing-xl) var(--spacing-xs);
 
     background: radial-gradient(90% 50% at 90% 2%, #660c2d, #3b0530 25%, #170223, transparent);
   }
@@ -37,7 +37,7 @@
     flex-direction: column;
     gap: var(--spacing-s);
 
-		@include mixins.platform(tablet, mobile) {
+    @include mixins.platform(tablet, mobile) {
       gap: var(--spacing-xs);
     }
   }
@@ -56,7 +56,7 @@
 
     color: var(--secondary-two);
 
-		@include mixins.platform(tablet, mobile) {
+    @include mixins.platform(tablet, mobile) {
       font-size: 24px;
     }
   }
@@ -69,7 +69,7 @@
 
     color: var(--secondary-one);
 
-		@include mixins.platform(tablet, mobile) {
+    @include mixins.platform(tablet, mobile) {
       font-size: 40px;
     }
   }

@@ -1,30 +1,30 @@
 @use '../../../../styles/mixins.scss' as mixins;
 
 .link {
-    font-family: var(--font-family);
-    font-size: 16px;
-    font-weight: 200;
-    line-height: normal;
+  font-family: var(--font-family);
+  font-size: 16px;
+  font-weight: 200;
+  line-height: normal;
 
-    color: var(--secondary-two);
+  color: var(--secondary-two);
 
-    cursor: pointer;
-    text-decoration: none;
+  cursor: pointer;
+  text-decoration: none;
 
-    -webkit-transition: color 300ms;
-    -moz-transition: color 300ms;
-    -o-transition: color 300ms;
-    transition: color 300ms;
+  -webkit-transition: color 300ms;
+  -moz-transition: color 300ms;
+  -o-transition: color 300ms;
+  transition: color 300ms;
 
-    &:hover {
-        color: var(--secondary-one);
-    }
+  &:hover {
+    color: var(--secondary-one);
+  }
 
-    &:active {
-        text-decoration: underline;
-    }
+  &:active {
+    text-decoration: underline;
+  }
 
-    @include mixins.platform(tablet, mobile) {
-        font-size: 14px;
-    }
+  @include mixins.platform(tablet, mobile) {
+    font-size: 14px;
+  }
 }

@@ -1,8 +1,6 @@
 @use '../../../../styles/mixins.scss' as mixins;
 
 .card {
-  position: relative;
-
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -34,24 +32,10 @@
 
     color: var(--secondary-two);
 
-     @include mixins.platform(tablet, mobile) {
+    @include mixins.platform(tablet, mobile) {
       font-size: 14px;
     }
   }
 
-  &::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    padding: 1px;
-    border-radius: inherit;
-
-    background: var(--gradient-light-bottom-top);
-
-    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-    -webkit-mask-composite: xor;
-    mask-composite: exclude;
-
-    pointer-events: none;
-  }
+  @include mixins.border-bottom-top;
 }
