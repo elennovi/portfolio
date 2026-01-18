@@ -1,7 +1,7 @@
 <header class="header">
-    <app-link label="Skills" (clicked)="onSkillsClicked()"/>
-    <app-link label="Milestones" (clicked)="onMilestonesClicked()"/>
-    <app-link label="Soft Skills" (clicked)="onSoftSkillsClicked()"/>
-    <app-link label="Trajectory" (clicked)="onTrajectoryClicked()"/>
-    <app-link label="Contact" (clicked)="onContactClicked()"/>
+    <app-link label="Skills" [routerLink]="['/']" fragment="skills"/>
+    <app-link label="Milestones" [routerLink]="['/']" fragment="milestones"/>
+    <app-link label="Soft Skills" [routerLink]="['/']" fragment="soft-skills"/>
+    <app-link label="Trajectory" [routerLink]="['/']" fragment="trajectory"/>
+    <app-link label="Contact" [routerLink]="['/']" fragment="contact"/>
 </header>
