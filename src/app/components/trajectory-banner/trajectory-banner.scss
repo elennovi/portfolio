@@ -114,6 +114,10 @@
 
       .decoration__bullet {
         top: 56px;
+
+        @include mixins.platform(tablet, mobile) {
+          top: 59px;
+        }
       }
     }
   }
