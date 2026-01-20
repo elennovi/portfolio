@@ -1,6 +1,18 @@
 <section class="main-banner">
-  <img class="main-banner__figure" src="figures/main_banner_figure.svg" alt="" />
-  <img class="main-banner__figure--mobile" src="figures/main_banner_figure_mobile.svg" alt="" />
+  <!-- <img class="main-banner__figure" src="figures/main_banner_figure.svg" alt="" /> -->
+  <ng-lottie
+    class="main-banner__figure"
+    [options]="{
+      path: 'animations/main_banner_animation.json',
+    }"
+  />
+  <ng-lottie
+    class="main-banner__figure--mobile"
+    [options]="{
+      path: 'animations/main_banner_animation_mobile.json',
+    }"
+  />
+  <!-- <img class="main-banner__figure--mobile" src="figures/main_banner_figure_mobile.svg" alt="" /> -->
 
   <div class="main-banner__content">
     <div class="main-banner__wrapper">

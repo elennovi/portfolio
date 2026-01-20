@@ -1,20 +1,36 @@
 <section class="milestones-banner">
-  <img
+  <!-- <img
     class="milestones-banner__image milestones-banner__image--left"
     src="figures/milestones_banner_figure_left.svg"
     alt=""
-  />
-  <img
-    class="milestones-banner__image milestones-banner__image--right"
-    src="figures/milestones_banner_figure_right.svg"
-    alt=""
+  /> -->
+
+  <ng-lottie
+    class="milestones-banner__image milestones-banner__image--left"
+    [options]="{
+      path: 'animations/milestones_banner_animation_left.json',
+    }"
   />
 
-  <img
+  <ng-lottie
+    class="milestones-banner__image milestones-banner__image--right"
+    [options]="{
+      path: 'animations/milestones_banner_animation_right.json',
+    }"
+  />
+
+  <ng-lottie
+    class="milestones-banner__image milestones-banner__image--mobile"
+    [options]="{
+      path: 'animations/milestones_banner_animation_mobile.json',
+    }"
+  />
+
+  <!-- <img
     class="milestones-banner__image milestones-banner__image--mobile"
     src="figures/milestones_banner_figure_mobile.svg"
     alt=""
-  />
+  /> -->
 
   <h2 class="milestones-banner__title">Milestones</h2>
 

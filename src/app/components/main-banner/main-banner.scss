@@ -17,6 +17,10 @@
   }
 
   &__figure {
+    min-width: 350px;
+    position: relative;
+    left: -1px;
+
     @include mixins.platform(tablet, mobile) {
       display: none;
     }
@@ -24,7 +28,7 @@
     &--mobile {
       position: absolute;
       right: 0;
-      top: 0;
+      top: -1px;
 
       @include mixins.desktop {
         display: none;
