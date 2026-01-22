@@ -1,5 +1,11 @@
 @use '../../../styles/mixins.scss' as mixins;
 
+:host {
+  --left-image-width: 235px;
+  --right-image-width: 175px;
+  --mobile-image-width: 55px;
+}
+
 .milestones-banner {
   position: relative;
 
@@ -31,6 +37,9 @@
       left: -1px;
       top: 280px;
 
+      min-width: var(--left-image-width);
+      max-width: var(--left-image-width);
+
       @include mixins.platform(tablet, mobile) {
         display: none;
       }
@@ -40,6 +49,9 @@
       right: 0;
       top: 280px;
 
+      min-width: var(--right-image-width);
+      max-width: var(--right-image-width);
+
       @include mixins.platform(tablet, mobile) {
         display: none;
       }
@@ -48,6 +60,9 @@
     &--mobile {
       left: 16px;
       top: 36px;
+
+      min-width: var(--mobile-image-width);
+      max-width: var(--mobile-image-width);
 
       @include mixins.desktop {
         display: none;

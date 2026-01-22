@@ -37,13 +37,6 @@
   }
 }
 
-/* ----------- ICONS ----------- */
-@mixin icon-size($size) {
-  height: $size;
-  width: $size;
-  font-size: $size;
-}
-
 /* ----------- BORDERS ----------- */
 @mixin border-bottom-top {
   position: relative;

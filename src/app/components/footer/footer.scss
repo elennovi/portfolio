@@ -1,5 +1,15 @@
 @use '../../../styles/mixins.scss' as mixins;
 
+:host {
+  --left-image-width: 200px;
+  --right-image-width: 175px;
+  --center-image-width: 480px;
+
+  --mobile-left-image-width: 135px;
+  --mobile-right-image-width: 130px;
+  --mobile-center-image-width: 340px;
+}
+
 .footer {
   position: relative;
 
@@ -32,8 +42,14 @@
       left: -1px;
       bottom: -7px;
 
+      min-width: var(--left-image-width);
+      max-width: var(--left-image-width);
+
       @include mixins.platform(tablet, mobile) {
         bottom: 90px;
+
+        min-width: var(--mobile-left-image-width);
+        max-width: var(--mobile-left-image-width);
       }
     }
 
@@ -42,10 +58,12 @@
       left: 50%;
       transform: translateX(-50%);
 
-      width: 480px;
+      min-width: var(--center-image-width);
+      max-width: var(--center-image-width);
 
       @include mixins.platform(tablet, mobile) {
-        width: 340px;
+        min-width: var(--mobile-center-image-width);
+        max-width: var(--mobile-center-image-width);
       }
     }
 
@@ -53,8 +71,14 @@
       right: -1px;
       bottom: -5px;
 
+      min-width: var(--right-image-width);
+      max-width: var(--right-image-width);
+
       @include mixins.platform(tablet, mobile) {
         bottom: 150px;
+
+        min-width: var(--mobile-right-image-width);
+        max-width: var(--mobile-right-image-width);
       }
     }
 

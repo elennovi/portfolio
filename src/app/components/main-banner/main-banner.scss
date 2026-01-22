@@ -2,13 +2,15 @@
 
 :host {
   --desktop-image-width: 350px;
+  --mobile-image-width: 375px;
 }
 
 .main-banner {
   display: flex;
   flex-direction: row;
 
-  padding: var(--spacing-6xl) var(--spacing-xl) var(--spacing-5xl) calc(var(--desktop-image-width) + var(--spacing-xl));
+  padding: var(--spacing-6xl) var(--spacing-xl) var(--spacing-5xl)
+    calc(var(--desktop-image-width) + var(--spacing-xl));
 
   background: radial-gradient(50% 90% at 10% 5%, #660c2d, #3b0530 25%, #170223, transparent);
 
@@ -33,6 +35,9 @@
       position: absolute;
       right: 0;
       top: -1px;
+
+      min-width: var(--mobile-image-width);
+      max-width: var(--mobile-image-width);
 
       @include mixins.desktop {
         display: none;
