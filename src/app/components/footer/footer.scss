@@ -11,6 +11,8 @@
   width: 100%;
   height: 500px;
 
+  overflow: hidden;
+
   background:
     radial-gradient(30% 85% at 50% 100%, #660c2d, #3b0530 25%, #170223, transparent),
     radial-gradient(25% 45% at 105% 70%, #660c2d, #3b0530 25%, #170223, transparent),
@@ -27,15 +29,29 @@
     position: absolute;
 
     &--left {
-      left: 0;
+      left: -1px;
+      bottom: -7px;
 
       @include mixins.platform(tablet, mobile) {
         bottom: 90px;
       }
     }
 
+    &--center {
+      bottom: -5px;
+      left: 50%;
+      transform: translateX(-50%);
+
+      width: 480px;
+
+      @include mixins.platform(tablet, mobile) {
+        width: 340px;
+      }
+    }
+
     &--right {
-      right: 0;
+      right: -1px;
+      bottom: -5px;
 
       @include mixins.platform(tablet, mobile) {
         bottom: 150px;
@@ -67,7 +83,7 @@
 .center {
   &__content {
     position: absolute;
-    bottom: 40px;
+    bottom: 60px;
     left: 50%;
     transform: translateX(-50%);
 

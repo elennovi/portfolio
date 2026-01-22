@@ -1,12 +1,14 @@
 @use '../../../styles/mixins.scss' as mixins;
 
+:host {
+  --desktop-image-width: 350px;
+}
+
 .main-banner {
   display: flex;
   flex-direction: row;
-  align-items: center;
-  gap: var(--spacing-xl);
 
-  padding: var(--spacing-6xl) var(--spacing-xl) var(--spacing-5xl) 0;
+  padding: var(--spacing-6xl) var(--spacing-xl) var(--spacing-5xl) calc(var(--desktop-image-width) + var(--spacing-xl));
 
   background: radial-gradient(50% 90% at 10% 5%, #660c2d, #3b0530 25%, #170223, transparent);
 
@@ -17,9 +19,11 @@
   }
 
   &__figure {
-    min-width: 350px;
-    position: relative;
+    position: absolute;
     left: -1px;
+
+    min-width: var(--desktop-image-width);
+    max-width: var(--desktop-image-width);
 
     @include mixins.platform(tablet, mobile) {
       display: none;
@@ -33,6 +37,10 @@
       @include mixins.desktop {
         display: none;
       }
+    }
+
+    &--hidden {
+      display: none;
     }
   }
 

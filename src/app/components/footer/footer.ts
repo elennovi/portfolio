@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 import { Link } from '../core/link/link';
+import { LottieComponent } from 'ngx-lottie';
 
 @Component({
   selector: 'app-footer',
-  imports: [Link],
+  imports: [Link, LottieComponent],
   templateUrl: './footer.html',
   styleUrl: './footer.scss',
 })

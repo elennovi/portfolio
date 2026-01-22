@@ -1,35 +1,56 @@
 <footer class="footer footer--desktop">
-  <img class="footer__image footer__image--desktop footer__image--left" src="figures/footer_figure_left.svg" alt="" />
-  <img class="footer__image footer__image--mobile footer__image--left" src="figures/footer_figure_left_mobile.svg" alt="" />
+  <ng-lottie
+    class="footer__image footer__image--desktop footer__image--left"
+    [options]="{
+      path: 'animations/footer_animation_left.json',
+    }"
+  />
+  <ng-lottie
+    class="footer__image footer__image--mobile footer__image--left"
+    [options]="{
+      path: 'animations/footer_animation_left_mobile.json',
+    }"
+  />
 
   <div class="footer__center">
-    <img class="footer__image--desktop" src="figures/footer_figure_center.svg" alt="" />
-    <img class="footer__image--mobile" src="figures/footer_figure_center_mobile.svg" alt="" />
+    <ng-lottie
+      class="footer__image--desktop footer__image footer__image--center"
+      [options]="{
+        path: 'animations/footer_animation_center.json',
+      }"
+    />
+    <ng-lottie
+      class="footer__image--mobile footer__image footer__image--center"
+      [options]="{
+        path: 'animations/footer_animation_center_mobile.json',
+      }"
+    />
 
     <div class="center__content">
-     <div class="content__wrapper">
+      <div class="content__wrapper">
         <span class="content__icon material-symbols-rounded" aria-hidden="true">link</span>
 
-        <app-link label="/in/elenanovilloluceno" (clicked)="onLinkedInClicked()"/>
+        <app-link label="/in/elenanovilloluceno" (clicked)="onLinkedInClicked()" />
       </div>
 
       <div class="content__wrapper">
         <span class="content__icon material-symbols-rounded" aria-hidden="true">mail</span>
 
-        <app-link label="elenanovilloluceno@gmail.com" (clicked)="onMailClicked()"/>
+        <app-link label="elenanovilloluceno@gmail.com" (clicked)="onMailClicked()" />
       </div>
     </div>
   </div>
 
-  <img
+  <ng-lottie
     class="footer__image footer__image--desktop footer__image--right"
-    src="figures/footer_figure_right.svg"
-    alt=""
+    [options]="{
+      path: 'animations/footer_animation_right.json',
+    }"
   />
-
-  <img
+  <ng-lottie
     class="footer__image footer__image--mobile footer__image--right"
-    src="figures/footer_figure_right_mobile.svg"
-    alt=""
+    [options]="{
+      path: 'animations/footer_animation_right_mobile.json',
+    }"
   />
 </footer>
